@@ -2,17 +2,26 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
-      "source": "/:token",
-      "destination": "https://script.google.com/macros/s/AKfycbzsU9NokPjIWF3UlCt_TvF8J2E_RxMZtxIiY5F9kV3nD8A7fYOmTIAyhEmNbx_ehuVVDQ/exec?demo=:token"
+      "source": "/:slug",
+      "destination": "/api/demo?lookup=:slug"
     }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
       ]
     }
   ]
