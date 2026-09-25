@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/:token",
-      "destination": "https://script.google.com/macros/s/AKfycbzsU9NokPjIWF3UlCt_TvF8J2E_RxMZtxIiY5F9kV3nD8A7fYOmTIAyhEmNbx_ehuVVDQ/exec?demo=:token"
+      "destination": "https://script.google.com/macros/s/AKfycbyga690675xTdbFf3v9mT6w2aGKkH3UoO6cRqqhz-PjtoILPp_EA9E3SRi9QVWsi8vhsg/exec?demo=:token"
     }
   ],
   "headers": [
