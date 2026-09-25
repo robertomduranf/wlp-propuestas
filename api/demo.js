@@ -6,12 +6,12 @@ export default async function handler(req, res) {
 
   const backend = String(process.env.APPS_SCRIPT_DEMO_URL || '').replace(/\/+$/, '');
   const bridgeSecret = String(process.env.WLP_BRIDGE_SECRET || '');
-  const token = String(req.query?.token || '').trim();
+  const lookup = String(req.query?.lookup || req.query?.token || '').trim();
 
   if (!backend || !bridgeSecret) {
     return sendError(res, 500, 'Puente de demos no configurado.');
   }
-  if (!token) {
+  if (!lookup) {
     return sendError(res, 400, 'Enlace de propuesta inválido.');
   }
 
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         api: 'demoHtml',
         bridgeSecret,
-        token
+        lookup
       }),
       redirect: 'follow'
     });
